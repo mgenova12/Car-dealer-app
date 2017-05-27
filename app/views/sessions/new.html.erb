@@ -1,0 +1,18 @@
+<h3>Login</h3>
+<%= form_tag "/login", method: :post do %>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Email: </span>
+    <input type="email" class="form-control" name="email" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Password: </span>
+    <input type="password" class="form-control" name="password" aria-describedby="basic-addon1">
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-default">Log in</button>
+  </div>
+
+<% end %>

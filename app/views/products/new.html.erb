@@ -1,0 +1,35 @@
+<h3> Here you can add a new product</h3>
+
+<%= form_tag("/products", method: "post") do %>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Name: </span>
+    <input type="text" class="form-control" name="name" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Price: </span>
+    <input type="text" class="form-control" name="price"  aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Description</span>
+    <input type="text" class="form-control" name="description"  aria-describedby="basic-addon1">
+  </div>
+
+  <div class="space"
+    <div class="form-group">
+      <label for="sel1">Supplier:</label>
+      <select class="form-control" name="supplier_id" id="sel1">
+        <% @suppliers.each do |supplier| %>
+        <option value="<%= supplier.id %>"><%= supplier.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="sub">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+
+<% end %>

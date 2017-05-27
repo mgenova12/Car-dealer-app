@@ -1,0 +1,23 @@
+<h3>Here is your cart!</h3>
+<p style="color:white"> ------------------------------------------------------</p>
+
+<% grand_total = 0  %>
+
+<% @carted_products.each do |carted_product|  %>
+  <h4 style="color:white">Name: <%= carted_product.product.name %> </h4>
+  <p style="color:white">Price: <%= number_to_currency(carted_product.product.price) %> </p>
+  <p style="color:white">Quantity: <%= carted_product.quantity %> <p>
+  <p style="color:white">Total: <%= number_to_currency(carted_product.quantity *  carted_product.product.price) %></p>
+  <% grand_total += (carted_product.quantity *  carted_product.product.price) %>
+  <%= form_tag "/carted_products/#{carted_product.id}", method: :delete do %>
+    <input class="btn btn-default" type="submit" value="REMOVE FROM CART">
+  <% end %>  
+
+  <p style="color:white"> ------------------------------------------------------</p>
+<% end  %>
+
+<h3>Total: <%= number_to_currency(grand_total) %></h3>
+
+<%= form_tag "/orders", method: :post do %>
+  <input class="btn btn-default" type="submit" value="BUY NOW">
+<% end %>

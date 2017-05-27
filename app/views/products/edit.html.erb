@@ -1,0 +1,29 @@
+<h3> Here you can edit your product</h3>
+
+<%= form_tag "/products/#{@car.id}", method: :patch do %>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Title: </span>
+  <input type="text" class="form-control" name="name" value="<%= @car.name %>" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Price: </span>
+  <input type="text" class="form-control" name="price" value="<%= @car.price %>" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Description</span>
+  <input type="text" class="form-control" name="description" value="<%= @car.description %>"  aria-describedby="basic-addon1">
+</div>
+
+  <button type="submit" class="btn btn-default">EDIT</button>
+
+<% end  %>
+
+
+<%= form_tag "/products/#{@car.id}", method: :delete do %>
+    
+  <button type="submit" class="btn btn-default">DELETE</button>
+
+<%end  %>

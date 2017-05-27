@@ -1,0 +1,40 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: url("http://media.gettyimages.com/videos/multicoloured-squares-with-random-flicking-effect-video-id459497842?s=640x640");
+}
+
+h3 {
+  color:white;
+}
+
+.nav {
+  font-size: 20px;
+}
+
+.navbar-form{
+  margin-right: 20px;
+}
+
+.input-group, .space {
+  margin-bottom: 30px;
+  margin-right: 900px;
+}
+
+.sub {
+  margin-left: 15px;
+}
+
+form {
+  display: inline;
+}
+
+.alert {
+  margin-top: -21px;
+}
+
+.user_name {
+  position: relative;
+  bottom: 10px;
+}

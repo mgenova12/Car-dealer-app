@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= @car.images[0].url %>">
+
+      <div class="caption">
+        <h4><%= @car.name %></h4>
+        <p>Supplier: <%= @car.supplier.name %> </p>
+        <p>Price: <%= number_to_currency(@car.price) %></p>
+        <p>Description: <%= @car.description %></p>
+        <p><a href='/products/<%= @car.id %>/edit' class="btn btn-primary" role="button">Edit</a> <a href="/products/<%= @car.id %>/images/new " class="btn btn-default" role="button">Add Image</a></p>
+        <%= form_tag "/carted_products", method: :post do  %>
+          Quantity<input type="text" name="quantity">
+          <input class="btn btn-default" type="submit" value="Add to cart">
+          <input type="hidden" name="product_id" value="<%= @car.id %> ">
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <% @car.images.each do |image| %>
+    <div class="col-xs-6 col-md-3">
+      <span class="thumbnail">
+        <img src="<%= image.url %>">    
+      </span>
+    </div>
+  <% end  %>  
+</div>

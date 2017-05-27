@@ -1,0 +1,25 @@
+<%if session[:user_id]%>  
+  <h4 class="user_name" style="color:white">Welcome! <%= current_user.name %></h4>
+<%end %>
+
+<% @cars.each_slice(3) do |three_cars|  %>
+  <div class ="row">
+    <% three_cars.each do |car| %>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="<%= car.images[0].url %>">
+          <div class="caption">  
+            <h4>Name: <%= car.name %></h4>
+            <p>Price: <%= number_to_currency(car.price) %></p>
+            <p>Description: <%= car.description %></p>
+            <p><a href='/products/<%= car.id %>' class="btn btn-primary" role="button">View</a></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+<%end%>
+
+
+
+
