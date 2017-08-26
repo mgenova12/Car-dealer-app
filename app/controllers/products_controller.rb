@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     if current_user
@@ -52,11 +53,15 @@ class ProductsController < ApplicationController
       description: params[:description],
       supplier_id: params[:supplier_id]
       )
-    @car.save
+    
+    if @car.save
+      flash[:success] = "This product has been added"
+      redirect_to "/products/#{@car.id}/images/new"
+    else 
+      redirect_to "/products/new"
+      flash[:danger] = "Your missing a field"
+    end
 
-    flash[:success] = "This product has been added"
-
-    redirect_to "/products/#{@car.id}/images/new"
   end
 
 

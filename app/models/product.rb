@@ -9,5 +9,9 @@ class Product < ApplicationRecord
 
   has_many :orders
 
-
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+  validates :supplier_id, presence: true
+  
 end
