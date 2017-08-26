@@ -12,7 +12,7 @@ Car Dealer app uses a number of open source projects to work properly:
 
 # Screenshots
 
-![alt text]()
+![alt text](https://cdn.rawgit.com/mgenova12/Car-dealer-app/13cd8dfa/app/assets/images/car-dealer-app-image.png)
 
 # Features
 * Create/Edit/Delete cars
