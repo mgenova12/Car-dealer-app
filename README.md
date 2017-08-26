@@ -1,12 +1,39 @@
-# README
+# Car Dealer App
+Car Dealer App allows you to shop for a new car. A user can easily find a car that they like by sorting and search based on their preference. Car dealers can add and edit existing cars available for purchase. 
 
-This a rails app that that allows users to purchase items.
+# Tech
 
-Key Functions
+Car Dealer app uses a number of open source projects to work properly:
 
-- User can sign up and login
-- User can sort by price, random, discounted items, or specific product type
-- User can search products by name
-- User can create edit destory a product
-- User can add a product to their shopping cart
-- User can purchase a product
+* [Ruby on Rails] - Server-side web application framework written in Ruby
+* [Bootstap] - The most popular HTML, CSS, and JS library in the world
+* [PostgreSQL] - Powerful, open source object-relational database system
+* [Bcrypt] -  A password hashing function
+
+# Screenshots
+
+![alt text]()
+
+# Features
+* Create/Edit/Delete cars
+* Add a car to shopping cart 
+* Checkout purchase
+* Add image for car
+* Search by car name
+* Choose a random car 
+* Sort by name/price
+* Display cars with certian categories
+* User signup/login
+
+
+
+
+   [Ruby on Rails]: <http://rubyonrails.org/>
+   [BootStap]: <http://getbootstrap.com/>
+   [PostgreSQL]: <https://www.postgresql.org/>
+   [Bcrypt]: <https://github.com/codahale/bcrypt-ruby/>
+
+   
+   
+   
+
