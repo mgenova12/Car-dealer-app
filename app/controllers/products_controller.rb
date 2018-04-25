@@ -33,7 +33,6 @@ class ProductsController < ApplicationController
     else 
       redirect_to '/login'
     end      
-
   end
 
   def new 
@@ -43,7 +42,6 @@ class ProductsController < ApplicationController
     else
       redirect_to '/login'
     end 
-
   end
 
   def create 
@@ -52,7 +50,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       description: params[:description],
       supplier_id: params[:supplier_id]
-      )
+    )
     
     if @car.save
       flash[:success] = "This product has been added"
@@ -61,9 +59,7 @@ class ProductsController < ApplicationController
       redirect_to "/products/new"
       flash[:danger] = "Your missing a field"
     end
-
   end
-
 
   def edit 
     @car = Product.find(params[:id])
@@ -78,7 +74,7 @@ class ProductsController < ApplicationController
       name: params[:name],
       price: params[:price],
       description: params[:description]
-      )
+    )
 
     flash[:warning] = "This product has been changed"
 
@@ -94,6 +90,4 @@ class ProductsController < ApplicationController
 
     redirect_to "/products"
   end
-
-
 end

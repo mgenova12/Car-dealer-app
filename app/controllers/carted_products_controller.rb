@@ -2,7 +2,7 @@ class CartedProductsController < ApplicationController
   before_action :authenticate_user!
   
   def index 
-    @carted_products = CartedProduct.where(user_id: current_user.id).where(status:'carted')
+    @carted_products = CartedProduct.where(user_id: current_user.id).where(status: 'carted')
 
     render 'index.html.erb'
   end
@@ -27,8 +27,7 @@ class CartedProductsController < ApplicationController
   end  
   
   def destroy
-
-    carted_product = CartedProduct.where(user_id: current_user.id).where(status:'carted').find_by(id: params[:id])
+    carted_product = CartedProduct.where(user_id: current_user.id).where(status: 'carted').find_by(id: params[:id])
 
     carted_product.update(
       status: "removed"
@@ -36,5 +35,4 @@ class CartedProductsController < ApplicationController
 
     redirect_to '/carted_products'
   end
-
 end

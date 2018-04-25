@@ -13,5 +13,4 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :supplier_id, presence: true
-  
 end
